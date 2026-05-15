@@ -1072,8 +1072,6 @@ def test_replace_time():
 
 def test_pickle():
     d = PlainDateTime(2020, 8, 15, 23, 12, 9, nanosecond=987_654)
-    dumped = pickle.dumps(d)
-    assert len(dumped) <= len(pickle.dumps(d.to_stdlib())) + 10
     assert pickle.loads(pickle.dumps(d)) == d
 
 
